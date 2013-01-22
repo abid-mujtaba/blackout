@@ -1,0 +1,5 @@
+This is the 'scripts' subfolder. This will contain pure Python files (not Django) which can be called by Django but which will not have Django code within them.
+
+Primarily this subfolder will contain the implementation of the kernel of the Blackout game i.e. a class that will implement the game at a very basic level. The Django code will interface with the class using its API and will then implement the web-end of it, but the class itself will be designed to work in an abstract fashion and allow a game to be played via the terminal, albeit with all players taking there turns on the terminal itself.
+
+A separate terminal interface will be written to help debug the kernel but an effort will be made to keep the kernel separate from the terminal-specific interface.
