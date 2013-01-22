@@ -62,7 +62,7 @@ class Blackout :
 
 			for rank in [ Rank.Two, Rank.Three, Rank.Four, Rank.Five, Rank.Six, Rank.Seven, Rank.Eight, Rank.Nine, Rank.Ten, Rank.Jack, Rank.Queen, Rank.King, Rank.Ace ] :
 
-				self.Deck.append( Card( suit, rank )		# create and append card object to self.Deck
+				self.Deck.append( Card( suit, rank ) )		# create and append card object to self.Deck
 
 
 		# Prepare a data structure to store player information:
@@ -159,7 +159,7 @@ class Blackout :
 
 		# Advance the dealer:
 
-		self.Dealer = ( self.Dealer + 1 ) % self.maxPlayers
+		self.Dealer = self._circInc( self.Dealer )
 
 
 		# Advance the round number:
@@ -397,13 +397,12 @@ def circGen( total, start ) :
 	This is a generator which creates a sequence of integers starting with the value 'start' which goes up to 'total - 1' and then circles back around to begin from zero. A single iteration is created.
 	'''
 
+	assert start > -1, 'ERROR: start must be a positive integer preferably between 0 and (total - 1)'
+
+
 	start = start % total		# We allow for the fact that start might be outside of total already
 
 
 	for ii in range(total) :
 
 		yield (ii + start) % total
-
-
-
-
