@@ -4,6 +4,7 @@
 # This file implements Unit tests for the various classes and functions in the Blackout scripts
 
 import unittest
+from cards import *		# import all classes and enumerations that simulate playing cards
 from blackout import *		# import all classes and functions from blackout.py
 
 class testBlackout( unittest.TestCase ) :
@@ -196,6 +197,27 @@ class testBlackout( unittest.TestCase ) :
 
 		Suit.Club.trump = False
 		Suit.Spade.led = False 
+
+	
+
+	def test_circInc( self ) :
+
+		'''
+		Tests the _circInc method of the Blackout class.
+		'''
+
+		# Initialize a class:
+
+		BC = Blackout( 4 )		# Initiate a game of Blackout with 4 players and the default (7) number of max tricks.
+
+
+		# Check _circInc funcitonality
+
+		self.assertEqual( BC._circInc(2), 3 )
+
+		self.assertEqual( BC._circInc(3), 0 )		# Loop around behaviour
+
+		self.assertEqual( BC._circInc(5), 2 ) 		# Increase by one and loop around
 
 
 
