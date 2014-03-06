@@ -1,5 +1,20 @@
+# Copyright 2013 Abid Hasan Mujtaba
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#
 # Author: Abid H. Mujtaba
-# Date: Jan. 21, 2012
+# Date: Jan. 21, 2013
 
 # This file implements the Blackout class which can be considered the Kernel of the Blackout web-application (being implemented using Django). The purpose of the class is to implement an entire game of Blackout in an abstract fashion which can then be interfaced using the designed class API to play the game either by a terminal or the internet via a web server.
 
